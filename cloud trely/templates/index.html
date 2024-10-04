@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Media Viewer</title>
+</head>
+<body>
+    <h1>Random Image or Video</h1>
+    {% if file_url.endswith('.mp4') or file_url.endswith('.mov') %}
+    <video width="640" height="480" controls>
+        <source src="{{ file_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% else %}
+    <img src="{{ file_url }}" alt="Random Image" width="640" height="480">
+    {% endif %}
+</body>
+</html>
